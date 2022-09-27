@@ -1,32 +1,24 @@
-#4. Напишите программу, которая по заданному номеру четверти, показывает диапазон возможных координат точек в этой четверти (x и y).
-#- A (3,6); B (2,1) -> 5,09
-#- A (7,-5); B (1,-1) -> 7,21
+#1. Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+#- 6 -> да
+#- 7 -> да
+#- 1 -> нет
 
-
-
-def inputNumbers(x):
-    xy = ["X", "Y"]
-    a = []
-    for i in range(x):
-        is_OK = False
-        while not is_OK:
-            try:
-                number = int(input(f"Введите координату по {xy[i]}: "))
-                a.append(number)
-                is_OK = True
-            except ValueError:
-                print("Ты ошибся. Вводить надо целые числа!")
-    return a
-
-
-def calculateLengthSegment(a, b):
-    lengthSegment = ((b[0] - a[0]) ** 2 + (b[1] - a[1]) ** 2) ** (0.5)
-    return lengthSegment
-
-
-print("Введите координаты точки А")
-pointA = inputNumbers(2)
-print("Введите координаты точки В")
-pointB = inputNumbers(2)
-
-print(f"Длина отрезка: {format(calculateLengthSegment(pointA, pointB), '.2f')}")
+a = int(input('Введите день недели: '))
+if a == 1:
+    print('Понедельник')
+elif a== 2:
+    print('Вторник')
+elif a == 3:
+    print('Среда')
+elif a == 4:   
+    print('Четверг')
+elif a == 5:
+    print('Пятница')
+elif a == 6:
+    print('Суббота')
+    print('выходной')
+elif a == 7:
+    print('Воскресенье') 
+    print('выходной')       
+else:
+    print('Неправильно ввели день недели')
